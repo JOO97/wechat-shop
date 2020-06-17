@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="help cont-box b-f" wx:for="{{list}}" wx:key="this">
+    <view>
+      <text class="h4 title">{{item.title}}</text>
+    </view>
+    <view>
+      <text class="p">{{item.content}}</text>
+    </view>
+    <view class="time-box">
+      <text class="time">发布时间:{{item.update_time}}</text>      
+    </view>
+  </view>
+</view>

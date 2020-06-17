@@ -1,0 +1,267 @@
+/* pages/order/search.wxss */
+/* 搜索框 */
+
+.index-search-box {
+  background: #fff;
+  padding: 10rpx 13rpx 10rpx 13rpx;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.index-search {
+  border-bottom: 0;
+  background: #fff;
+  /* border-radius: 10rpx; */
+  overflow: hidden;
+  position: relative;
+  font-size: 28rpx;
+  color: #999;
+  box-sizing: border-box;
+  height: 64rpx;
+  line-height: 64rpx;
+  border-radius: 32rpx;
+}
+
+.search-box{
+  display: flex;
+}
+.search-left{
+  flex: 6;
+}
+.search-right{
+  /* flex: 2; */
+  width: 150rpx;
+  height: 80rpx;
+  margin-left: 10rpx;
+background-color: #66AAAC;
+border-radius: 50rpx;
+text-align: center;
+line-height: 80rpx;
+color: #fff;
+font-weight: 600;
+}
+
+.picker{
+  border-radius: 38rpx;
+  border: 2rpx solid #66AAAC;
+  height: 25rpx;
+  line-height: 25rpx;
+}
+
+.disabled{
+  color: #c2c0c1;
+  background-color: #dedede;
+}
+
+.empty-box{
+  margin-top: 200rpx;
+  text-align: center;
+  color: #c2c0c1;
+}
+
+.icon-5{
+  font-size: 174rpx;
+  /* color: #c2c0c1; */
+}
+
+
+
+/* pages/order/service.wxss */
+
+
+
+
+.scroll-box {
+margin-top: 100rpx;
+}
+
+.goods-info {
+  display: flex;
+flex-direction: column;
+/* font-size: 36rpx; */
+justify-content: center;
+
+}
+
+.l-box{
+  box-shadow: 0px 2rpx 10rpx rgba(0,0,0,.1);
+
+}
+
+.flow-shopList .flow-list-left image {
+width: 160rpx;
+height: 160rpx;
+
+}
+
+
+.goods-name {
+  margin-bottom: 10rpx;
+}
+
+.right-box {
+flex: 4;
+}
+
+.time-box {
+  font-size: 26rpx;
+  margin-bottom: 16rpx;
+}
+
+.goods-name,
+.goods-attr {
+  border-left: 4rpx solid #66AAAC;
+padding-left: 8rpx;
+
+}
+
+.flow-btn-min {
+  background: #fff;
+  border: 1rpx solid #ccc;
+  height: 30px;
+  line-height: 30px;
+  font-size: 28rpx;
+  width: 200rpx;
+  margin: 0 auto;
+  border-radius: 5px;
+  text-align: center;
+  color: #777;
+  margin-top: 25rpx;
+}
+
+.service-box{
+  background-color: #fff;
+  padding: 12rpx 10rpx 0;
+  margin: 0 10rpx 20rpx;
+}
+
+.line-1-title{
+  font-weight: 600;
+  /* float: left; */
+  color: #66AAAC;
+}
+
+.line-1{
+  display: flex;
+  padding-bottom: 18rpx;
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.line-1-left{
+  flex: 3;
+}
+.line-1-right{
+  flex: 1;
+}
+.line-1-status{
+  float: right;
+  color: #959595;
+  font-size: 30rpx;
+}
+.icon-lajixiang{
+  vertical-align: middle;
+  color: #66AAAC;
+  margin-left: 4px;
+
+}
+
+.line-2{
+  padding: 14rpx 0 10rpx;
+  /* color: #8F8F8F; */
+  font-size: 28rpx;
+}
+
+.service-date,.service-no {
+  margin-bottom: 12rpx;
+}
+
+.line-3{
+  padding-bottom: 10rpx;
+  /* color: #8F8F8F; */
+  font-size: 28rpx;
+}
+
+.service-msg {
+  overflow-wrap: break-word;
+  
+}
+
+.service-msg-title {
+  font-weight: 600;
+color: #66AAAC;
+  margin: 10rpx 0;
+}
+
+.edit {
+  float: right;
+  border-radius: 14rpx; 
+  padding: 15rpx 30rpx;
+  background-color: #66aaac;
+  color: #fff;
+  opacity: .8;
+
+}
+
+
+.cancel{
+  float: right;
+  border-radius: 14rpx; 
+  padding: 15rpx 30rpx;
+  background-color: #F7F7F7;
+  color: #A9A9A9;
+  /* margin-right: 10rpx; */
+}
+
+/* .disabled{
+  float: right;
+  border-radius: 14rpx; 
+  padding: 15rpx 30rpx;
+  background-color: #F7F7F7;
+  color: #A9A9A9;
+  margin-right: 10rpx;
+} */
+
+.edit{
+  margin-right: 10rpx;
+}
+.line-5{
+  height: 80rpx;
+  margin-top: 10rpx;
+}
+
+.address {
+  overflow-wrap: break-word;
+}
+
+.create-time{
+  /* margin-left: 16rpx; */
+}
+
+.color {
+  color: #66AAAC;
+}
+
+.line-4 {
+  padding-bottom: 10rpx;
+
+}
+
+.operation-time-box{
+  padding: 16rpx 6rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #f3f3f3;
+  color: #9D9396;
+}
+
+
+
+
+.search-result{
+  background-color: #fff;
+  line-height: 92rpx;
+  font-size: 35rpx;
+  padding-left: 10rpx;
+  font-weight: 600;
+}

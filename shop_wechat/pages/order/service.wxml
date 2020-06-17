@@ -1,0 +1,70 @@
+<!--pages/order/service.wxml-->
+<!-- <text>pages/order/service.wxml</text> -->
+<view class="index-search-box">
+    <navigator class="index-search " hover-class="none" openType="navigate" url="/pages/order/search?user_id={{user_id}}">
+      <view class="index-cont-search t-c">
+        <icon class="text-center" color="rgba(0,0,0,0.4)" size="15" type="search"></icon>
+        <text>搜索我的预约</text>
+      </view>
+    </navigator>
+</view>
+<view class="header f-28 col-3">
+      <view catchtap="bindHeaderTap" class="{{dataType==='all'?'active':''}}" data-type="all">全部预约</view>
+      <view bindtap="bindHeaderTap" class="{{dataType==='order'?'active':''}}" data-type="order">待接单</view>
+       <view bindtap="bindHeaderTap" class="{{dataType==='take'?'active':''}}" data-type="take">已接单</view>
+      <view bindtap="bindHeaderTap" class="{{dataType==='finish'?'active':''}}" data-type="finish">已完成</view>
+      <view bindtap="bindHeaderTap" class="{{dataType==='cancel'?'active':''}}" data-type="cancel">已取消</view>
+    </view>
+<scroll-view class="scroll-box" wx:if="{{serviceList.data.length>0}}" scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" enable-back-to-top="true">
+  <view class="l-box" wx:for="{{serviceList.data}}" wx:key="serviceList.data.service_id">
+    <view class="service-box">
+      <view class="line-1">
+        <view class="line-1-left">
+          <view class="line-1-title" wx:if="{{item.service_install!=0}}">预约安装</view>
+          <view class="line-1-title" wx:if="{{item.service_repair!=0}}">预约维修 </view>
+          <view class="line-1-title" wx:if="{{item.service_replace!=0}}">预约换芯 </view>
+        </view>
+        <view class="line-1-right">
+          <view class="line-1-status" wx:if="{{item.service_status==10}}">等待接单</view>       
+          <view class="line-1-status" wx:if="{{item.service_status==11}}"><text class="iconfont icon-lajixiang" bindtap="delete" data-serviceId="{{item.service_id}}"></text>已取消</view>         
+          <view class="line-1-status color" wx:if="{{item.service_status==20}}">已接单</view>          
+          <view class="line-1-status" wx:if="{{item.service_status==30}}"><text class="iconfont icon-lajixiang" bindtap="delete" data-serviceId="{{item.service_id}}"></text>已完成</view> 
+        </view>
+      </view>
+      <view class="operation-time-box">
+        <view class="service-no" >预约单号: {{item.service_no}}</view>        
+        <view class="create-time">下单时间: {{item.create_time}}</view>                
+        <view class="operation-1" wx:if="{{item.service_status==20&&item.take_time!=0}}">接单时间: {{item.take_time}}</view>
+        <view class="operation-2" wx:if="{{item.service_status==30&&item.finish_time!=0}}">完成时间: {{item.finish_time}}</view>
+      </view>
+      <view class="line-2">
+        <view class="service-date-box">
+          <text class="service-date">预约时间: {{item.service_date}}</text>
+        </view>
+        
+      </view>
+      <view class="line-3">
+        <view class="address">
+          <text>预约地址: </text><text>{{item.merger_name}} {{item.detail}}</text>
+        </view>
+      </view>
+      <view class="line-4">
+        <view class="service-msg-title">备注:</view>
+        <view class="service-msg">{{item.service_msg}}</view>
+      </view>
+      <view class="line-5" wx:if="{{item.service_status==10}}">
+        <view class="cancel" disabled="{{item.service_status==20}}" bindtap="cancel" data-serviceId="{{item.service_id}}" data-dateId="{{item.service_date}}">取消</view>
+        <!-- <view class="edit" disabled="{{item.service_status==20}}" bindtap="edit" data-serviceId="{{item.service_id}}">修改</view> -->
+      </view>
+    </view>
+  </view>  
+  <view wx:if="{no_more}}" class="no-more">
+       没有更多了
+  </view>
+</scroll-view>
+
+<view class="noservice-box" wx:if="{{serviceList.data.length==0}}">
+    <text class="iconfont2 icon-5"></text>
+    <view>您无该类型的预约</view>
+    <view bindtap="goService" class="flow-btn-min">去预约</view>
+</view> 

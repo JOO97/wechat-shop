@@ -1,0 +1,58 @@
+<!--pages/store/index.wxml-->
+<view class="container">
+  <view class="top-box">
+    <scroll-view scroll-x="true" class="scroll-x" scroll-with-animation="true">
+    <view class="title-box"  wx:for="{{storeInfo}}" wx:key="this">
+      <view class="{{item.store_info_id===infoId?'active':''}}">
+        <view catchtap="bindHeaderTap" class="store-title" data-infoId="{{item.store_info_id}}">{{item.store_info_name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  </view>
+  <scroll-view wx:if="storeDetail">
+  <view class="top-box">
+    <view class="img-box">
+      <view class="page-section page-section-spacing swiper">
+          <swiper style="height:184px;"
+            indicator-dots="true" autoplay="true" circular="false"
+            interval="2000" duration="1000" wx:if="storeDetail">
+            <block wx:for="{{storeDetail.image}}" wx:key="this">
+              <swiper-item>
+                <image src="{{item.file_path}}" ></image>
+              </swiper-item>
+            </block>
+          </swiper>
+      </view>
+    </view>
+    <view class="name-box">
+      <text>{{storeDetail.store_info_name}}</text>
+    </view>
+  </view>
+  <view class="msg-box">
+    <text>{{storeDetail.store_info_msg}}</text>
+  </view>
+  <view class="info-list">
+    <view class="address-box" bindtap="goMap" data-latitude="{{storeDetail.store_info_latitude}}" data-longitude="{{storeDetail.store_info_longitude}}">
+      <text class="iconfont icon-map"></text>
+      <text class="address">{{storeDetail.store_info_address}}</text>
+      <text class="iconfont icon-xiangyoujiantou"></text>
+    </view>
+  <view class="time-box">
+    <text class="iconfont2 icon-shijian"></text>
+    <text class="time">{{storeDetail.store_info_opentime}}</text>
+  </view>
+  <view class="tel-box" bindtap="givingCall">
+    <text class="iconfont2 icon-dianhua"></text>
+    <text class="tel">{{storeDetail.store_info_tel}}</text>
+    <text class="iconfont icon-xiangyoujiantou"></text>
+  </view>
+  </view>
+</scroll-view>
+</view>
+  
+    
+
+
+
+
+

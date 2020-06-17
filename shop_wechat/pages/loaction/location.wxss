@@ -1,0 +1,4 @@
+/* pages/loaction/location.wxss */
+.icon-map {
+  color: red;
+}

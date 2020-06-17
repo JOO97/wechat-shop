@@ -1,0 +1,174 @@
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user">
+    <view class="user-header">
+      <!-- 已登录 -->
+      <view wx:if="{{ isLogin }}" class="user-header-cont">
+        <view class="user-header-avatar">
+          <open-data class="" lang="zh_CN" type="userAvatarUrl"></open-data>
+        </view>
+        <open-data class="user-header-cont-name" lang="zh_CN" type="userNickName"></open-data>
+      </view>
+      <!-- 未登录 -->
+      <view wx:else class="user-header-cont" catchtap="onLogin">
+        <view class="user-header-avatar">
+          <image src="/images/default-avatar.jpg"></image>
+        </view>
+        <view class="user-header-cont-name">点击登录</view>
+      </view>
+    </view>
+  </view>
+      <!-- 订单导航栏 -->
+    <view class="order-navbar">
+      <form bindsubmit="onTargetOrder" data-type="all" report-submit="true">
+        <button formType="submit" class="btn-normal">
+          <view class="order-navbar-header dis-flex">
+            <text class="f-30">我的订单</text>
+            <view class="dis-flex flex-y-center">
+              <text class="f-30 col-6">全部订单</text>
+              <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+            </view>
+          </view>
+        </button>
+      </form>
+      <view class="order-navbar-footer dis-flex m-top10">
+        <!-- <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="all" report-submit="true">
+            <button formType="submit" class="btn-normal">
+              <text class="order-navbar__icon iconfont icon-form"></text>
+              <text class="order-navbar__name">全部订单</text>
+            </button>
+          </form>
+        </view> -->
+        <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="payment" report-submit="true">
+            <button formType="submit" class="btn-normal">
+              <text class="order-navbar__icon iconfont2 icon-daifukuan1"></text>
+              <text class="order-navbar__name">待付款</text>
+              <text class="order-badge" wx:if="{{orderCount.payment > 0  && orderCount.payment< 100}}">{{orderCount.payment}}</text>
+              <text class="order-badge" wx:if="{{orderCount.payment >= 100 }}">99+</text>
+
+            </button>
+          </form>
+        </view>
+        <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="delivery" report-submit="true">
+            <button formType="submit" class="btn-normal">
+              <text class="order-navbar__icon iconfont2 icon-icon-test"></text>
+              <text class="order-navbar__name">待发货</text>
+              <text class="order-badge" wx:if="{{orderCount.delivery > 0 && orderCount.delivery< 100}}">{{orderCount.delivery}}</text>
+              <text class="order-badge" wx:if="{{orderCount.delivery >= 100 }}">99+</text>
+            </button>
+          </form>
+        </view>
+        <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="received" report-submit="true">
+            <button formType="submit" class="btn-normal">
+              <text class="order-navbar__icon iconfont2 icon-daishouhuo1"></text>
+              <text class="order-navbar__name">待收货</text>
+              <text class="order-badge" wx:if="{{orderCount.received > 0 && orderCount.received < 100}}">{{orderCount.received}}</text>
+              <text class="order-badge" wx:if="{{orderCount.received >= 100 }}">99+</text>
+            </button>
+          </form>
+        </view>
+        <view class="order-navbar-item flex-box">
+          <form bindsubmit="onTargetOrder" data-type="comment" report-submit="true">
+            <button formType="submit" class="btn-normal">
+              <text class="order-navbar__icon iconfont2 icon-daipingjia20"></text>
+              <text class="order-navbar__name">待评价</text>
+              <text class="order-badge" wx:if="{{orderCount.comment > 0 && orderCount.comment < 100}}">{{orderCount.comment}}</text>
+              <text class="order-badge" wx:if="{{orderCount.comment >= 100 }}">99+</text>
+            </button>
+          </form>
+        </view>
+      </view>
+    </view>
+  <!-- 菜单列表 -->
+  <view class="menus-list m-top20">
+    <form bindsubmit="onTargetMenus" data-url="pages/order/service?user_id={{user_id}}" report-submit="true">
+      <button formType="submit" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont2 icon-yuyue f-34"></text>
+            <text class="menus-item__name f-30">我的预约</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
+          </view>
+        </view>
+      </button>
+    </form>
+    <!-- 我的收藏 -->
+    <form bindsubmit="onTargetMenus" data-url="pages/user/collect?user_id={{user_id}}" report-submit="true">
+      <button formType="submit" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont2 icon-daipingjia01 f-34"></text>
+            <text class="menus-item__name f-30">我的收藏</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
+          </view>
+        </view>
+      </button>
+    </form>
+
+    <form bindsubmit="onTargetMenus" data-url="pages/address/index" report-submit="true">
+      <button formType="submit" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont2 icon-wodedizhi1 f-34"></text>
+            <text class="menus-item__name f-30">我的地址</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
+          </view>
+        </view>
+      </button>
+    </form>
+   
+    <form bindsubmit="onTargetMenus" data-url="pages/store/index" report-submit="true">
+      <button formType="submit" class="btn-normal" style="margin-top:20rpx;">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont2 icon-shop f-34"></text>
+            <text class="menus-item__name f-30">门店信息</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
+          </view>
+        </view>
+      </button>
+    </form>
+
+    <form bindsubmit="onTargetMenus" data-url="pages/user/notice" report-submit="true">
+      <button formType="submit" class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont2 icon-bulletin f-34"></text>
+            <text class="menus-item__name f-30">店铺公告</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
+          </view>
+        </view>
+      </button>
+    </form>
+
+
+        <!-- <form bindsubmit="onTargetMenus" data-url="pages/user/help" report-submit="true"> -->
+      <button open-type="contact" sessionFrom="weapp"  class="btn-normal">
+        <view class="menus-item dis-flex b-f">
+          <view class="menus-item__left flex-box dis-flex flex-y-center">
+            <text class="iconfont2 icon-kefu1 f-34"></text>
+            <text class="menus-item__name f-30">联系客服</text>
+          </view>
+          <view class="menus-item__right flex-box dis-flex flex-x-end flex-y-center">
+            <text class="iconfont icon-xiangyoujiantou f-26 col-7"></text>
+          </view>
+        </view>
+      </button>
+      <!-- <button open-type="contact" sessionFrom="weapp" size="27" style="opacity: 0;position:absolute;top:0px;left:0px;display:block;width:100%;height:100%;" type="default-light"></button> -->
+    <!-- </form> -->
+  </view>
+</view>

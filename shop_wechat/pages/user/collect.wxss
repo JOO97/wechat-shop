@@ -1,0 +1,77 @@
+/* pages/user/collect.wxss */
+.goods{
+  flex: 5;
+  display: flex;
+}
+
+.img-box image{
+  width: 190rpx;
+  height: 190rpx;
+}
+
+.img-box{
+  width: 190rpx;
+  height: 190rpx;
+}
+.coll{
+  display: flex;
+  padding: 10rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.content{
+  flex: 4;
+  padding: 10rpx;
+}
+
+.coll-logo{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-xingxing1{
+  font-size: 70rpx!important;
+  color: #ff4c60!important;
+}
+
+.goods-name{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+
+
+
+.empty{
+  margin-top: 200rpx;
+  text-align: center;
+  color: #c2c0c1;
+}
+.icon-5{
+  font-size: 174rpx;
+}
+
+.goods-status{
+  text-align: right;
+  color: #fff;
+
+}
+
+.goods-status text{
+  background-color: #d1d1d1;
+  padding: 3rpx 5rpx;
+  font-size: 28rpx;
+}
+
+.create-time {
+  font-size: 28rpx;
+  color: #d1d1d1;
+  text-align: right;
+}

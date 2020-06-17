@@ -1,0 +1,186 @@
+/* 搜索框组件 */
+@import "components/search/search.wxss";
+
+/* banner组件 */
+@import "components/banner/banner.wxss";
+
+/* 猜您喜欢 */
+
+.title-hrbg {
+  position: relative;
+  z-index: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  overflow: hidden;
+  color: #888;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.title-hrbg .cont {
+  background: #f7f7f7;
+  padding: 1rem 0.6rem;
+  font-size: 30rpx;
+  z-index: 10;
+}
+
+.title-hrbg .cont .icon-huo {
+  padding-right: 10rpx;
+}
+
+.title-hrbg .hr {
+  background: #ddd;
+  height: 1rpx;
+  border: 0;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 50%;
+  margin-top: 1px;
+  z-index: -1;
+}
+
+.title-header text {
+  margin-left: 16rpx;
+}
+.title-header{
+  font-weight: 600;
+}
+
+.hot-title{
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+}
+
+.hot-title text {
+  margin-left: 16rpx; 
+  font-weight: 600;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.hot-box {
+  margin-top: 0!important;
+}
+
+
+.info-list-box {
+  height: 80rpx;
+  background-color: #fff;
+  line-height: 80rpx;
+ flex: 8;
+}
+
+.info-list-text {
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  /* padding: 0 30rpx; */
+}
+
+.icon{
+  /* margin-right: 10rpx; */
+  color: #66A9AB;
+  flex: 1;
+  margin: auto;
+  text-align: center;
+  font-size: 42rpx;
+}
+
+.jiantou{
+  margin: auto;
+  text-align: center;
+  flex: 1;
+}
+
+.gonggaolan {
+  display: flex;
+  background-color: #fff;
+  margin-top: 16rpx;
+}
+
+.recommended-index-list{
+  margin-top: 12rpx;
+}
+.nav-box {
+  margin: 10rpx 0;
+background-color: #fff;
+padding: 10rpx 10rpx 0;
+
+}
+
+.nav-1{
+  display: flex;
+}
+
+.nav-1 .url {
+  flex: 1;
+  /* text-align:center; */
+  /* height: 145rpx; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6rpx;
+}
+.nav-1 .url image {
+  width: 70rpx;
+  height: 70rpx;
+  flex: 1;
+  border-bottom: 6rpx;
+}
+.nav-1 .url text {
+  /* flex: 1; */
+  font-size: 26rpx;
+}
+
+.search-box{
+  display: flex;
+  /* position: relative; */
+}
+.diy-search{
+  border-radius: 34rpx!important;
+}
+.location{
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  float: left;
+}
+
+.search-box-left{
+  /* flex: 10; */
+  width: 428rpx;
+}
+.noLoc{
+  /* width: 618rpx; */
+  width: 100%;
+}
+
+.search-box-right{
+  flex: 1;
+  margin-right: 10rpx;
+  /* background-color: pink; */
+  padding-top: 5rpx;
+}
+
+.btn-normal{
+  float: left;
+}
+
+.search-box-right .iconfont {
+  font-size: 46rpx;
+  color: #fff;
+  /* vertical-align: middle!important; */
+  float: left;
+}
+
+.app-title,
+.loction{
+  color: #fff!important;
+}
+
+.nav-icon{
+  font-size: 66rpx!important;
+  color: #66AAAC;
+}

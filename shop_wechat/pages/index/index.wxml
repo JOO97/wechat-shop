@@ -1,0 +1,128 @@
+<view class="container" hidden="{{!isShow}}">
+ 
+  <scroll-view bindscroll="scroll" scroll-top="{{scrollTop}}" scroll-y="true" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+  <!-- 搜索 -->
+  <view class="diy-search-box col-f ts-3 search-box">
+    <!-- <view class="location" wx:if="{{address}}"><text></text></view>  -->
+    <view class="search-box-right" wx:if="address">
+      <text class="iconfont icon-map"></text>
+      <view class="loction">{{address.city}}{{address.district}}</view>
+    </view>
+    <view class="{{address?'dis-flex search-box-left':'dis-flex search-box-left noLoc'}}">
+     <view class="diy-search flex-box angle-radius text-center">
+       <navigator class="cont" hover-class="none" openType="navigate" url="../search/index">
+         <text class="iconfont icon-sousuo f-30"></text>
+         <text class="f-28">搜索商品</text>
+       </navigator>
+     </view>
+    </view>
+ </view>
+    <!-- 轮播图 -->      
+    <!-- <block> -->
+      <!-- <block wx:if="{{item.type === 'banner'}}">
+        <include src="components/banner/banner.wxml" />
+      </block> -->
+      <view class="diy-banner">
+  <swiper autoplay="true" class="banner-box swiper-box dot-round" duration="1000" circular="true" indicator-dots="true" interval="2000" indicator-color="#000" indicator-active-color="#fff" wx:if="itmes">
+    <block wx:for="{{items}}" wx:key="this">
+      <navigator hover-class="none" url="/{{item.link}}" >
+      <swiper-item>
+        <image class="slide-image"  src="{{item.image.file_path}}"></image>
+      </swiper-item>
+    </navigator>
+    </block>
+  </swiper>
+</view>
+    <!-- </block> -->
+    
+    <!-- 公告栏 -->
+<view class="gonggaolan" bindtap="goNotice">
+    <text class="iconfont icon-icon_service icon"></text>    
+    <swiper class="info-list-box" vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items="1" wx:if="{{notice}}">
+     <block wx:for="{{notice}}" wx:key="this" wx:for-item="item">
+       <!-- <navigator url="/pages/user/notice"> -->
+         <swiper-item>
+           <view class="info-list-text">
+             <text class="info-list-item">{{item.content}}</text>
+           </view>
+         </swiper-item>
+       <!-- </navigator> -->
+     </block>
+    </swiper>
+    <text class="iconfont icon-xiangyoujiantou jiantou"></text>
+</view>
+
+<!-- 导航栏 -->
+<view class="nav-box">
+  <view class="nav-1">
+      <navigator class="url" bindtap="orderService" url="javascript:;">
+        <text class="iconfont2 icon-gongju3 nav-icon"></text>
+        <text>{{name.name1}}</text>
+      </navigator>
+     <!-- <view class="url"><image mode="scaleToFill" class="nav-item" src="{{orderInfo.url}}"></image><text>{{orderInfo.name}}</text></view> -->
+     <navigator class="url" open-type="navigate" url="/pages/store/index">
+        <text class="iconfont2 icon-shop nav-icon"></text>       
+        <text>{{name.name2}}</text>
+     </navigator>
+  </view>
+</view>
+    
+    <!-- 新品推荐 -->
+    <view class="recommended-index-list">
+      <view class="title-header b-f col-3">
+        <text>{{name.name3}}</text>
+      </view>
+    </view>
+    <view class="index_sale ">
+      <scroll-view scroll-x="true">
+        <navigator hover-class="none" style="display: inline-block;" url="../goods/index?goods_id={{item.goods_id}}" wx:for="{{newest}}" wx:key="this">
+          <view class="page-column">
+            <view class="sale_img">
+              <image mode="aspectFill" src="{{item.image[0].file_path}}"></image>
+            </view>
+            <view class="content onelist-hidden">
+              <text>{{item.goods_name}}</text>
+            </view>
+            <text class="price col-m f-30">￥{{item.spec[0].goods_price}}</text>
+          </view>
+        </navigator>
+      </scroll-view>
+    </view>
+
+
+    <!-- 热门商品 -->
+    <view class="hot-box" style="margin-top:10rpx">
+      <view class="hot-title">
+        <text>{{name.name4}}</text>
+      </view>
+      <!-- <view class="hr"></view> -->
+    </view>
+    <view class="category-list">
+      <navigator class="list b-f" hover-class="none" url="../goods/index?goods_id={{item.goods_id}}" wx:for="{{best}}" wx:key="this">
+        <view class="left">
+          <view class="img">
+            <image class="goodsImg" mode="scaleToFill" src="{{item.image[0].file_path}}"></image>
+          </view>
+        </view>
+        <view class="right">
+          <view class="cont">
+            <text class="f-30 title twolist-hidden m-top10">{{item.goods_name}}</text>
+            <text class="price f-34 col-m f-w">￥{{item.spec[0].goods_price}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <!-- 底部-->
+    <view class="title-footer p-r">
+      <text class="f-24 col-9 cont">已经到底了</text>
+      <view class="hr"></view>
+    </view>
+  </scroll-view>
+
+  <!-- 返回顶部 -->
+  <view bindtap="goTop" class="widget-goTop" wx:if="{{floorstatus}}">
+    <text class="iconfont icon-fanhuidingbu"></text>
+  </view>
+
+</view>

@@ -1,0 +1,6 @@
+<!--pages/store/map.wxml-->
+<text>pages/store/map.wxml</text>
+<view>
+  {{address.city}}{{address.district}}{{address.street_number}}
+</view>
+<button bindtap="map">1111</button>

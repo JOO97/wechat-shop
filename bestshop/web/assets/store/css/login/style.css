@@ -1,0 +1,135 @@
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+input, select {
+    vertical-align: middle
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+/* 登录页 */
+
+html, body {
+    height: 100%;
+}
+.page-login-v3:before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: linear-gradient(45deg, #97AAA2, #35384F) center center/cover no-repeat !important;
+}
+.container {
+    text-align: center;
+    height: 100%;
+}
+.container:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    content: "";
+}
+.login-body {
+    display: inline-block;
+    vertical-align: middle;
+    width: 400px;
+    margin: 75px 0;
+    /*background: pink;*/
+    border-radius: 4px;
+    padding: 24px 40px 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.login-content {
+
+}
+.login-content .brand .brand-img {
+    width: 50px;
+}
+.login-content .brand .brand-text {
+    margin-bottom: 25px;
+    font-size: 32px !important;
+    text-shadow: rgba(0, 0, 0, .3) 4px 4px 1px;
+    font-weight: 500;
+    color: #fff;
+}
+.login-form {
+    margin: 24px 0 30px;
+}
+.login-form .form-group {
+    margin: 20px 0;
+}
+.login-form input {
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    background-color: #8F969D;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    height: 42px;
+    line-height: 1.5;
+    outline: none;
+    padding: 0 5px;
+    color: #fff;
+}
+
+
+
+.login-form button {
+    width: 100%;
+    background-color: #2B3C53;
+    border-radius: 20px;
+    font-weight: 700;
+    padding: 10px 18px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    white-space: normal;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+}
+
+.login-form button[disabled] {
+    color: #fff;
+    background-color: #2B3C53;
+    opacity: .4;
+    cursor: not-allowed;
+}
+

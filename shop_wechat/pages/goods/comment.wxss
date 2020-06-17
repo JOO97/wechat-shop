@@ -1,0 +1,103 @@
+/* pages/goods/comment.wxss */
+.allComment-title{
+  border-bottom: 2rpx solid #EFEFEF;
+  padding: 10rpx;
+}
+
+.goods-comment-cont {
+  display: block;
+  overflow-wrap: break-word;
+}
+
+
+.nocomment-box{
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.active{
+  color: #FF4C60;
+}
+
+.hide{
+  display: none;
+}
+
+.picBox{
+  display: inline-block;
+  width: 70rpx;
+  height: 70rpx;
+  background-color: pink;
+  margin-right: 10rpx;
+  border-radius: 50%;
+  background-repeat: round;
+}
+.admin,.icon-haoping2{
+  font-size: 35rpx;
+}
+
+.line{
+  /* display: flex; */
+  height: 32rpx;
+}
+.line .create-time{
+  /* flex: 4 */
+  float: left;
+  font-size: 26rpx;
+}
+
+.line .user-btn{
+  float: right;
+  font-size: 34rpx;
+  color: #66AAAC;
+}
+
+.user-btn view{
+  float: right;
+  margin-left:15rpx;
+}
+.line .user-btn .delete{
+  /* margin-right: 15prx; */
+}
+
+.com-xing{
+  /* float: right; */
+}
+
+.type-box{
+  /* display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start; */
+  /* height: 100rpx; */
+}
+
+.type-title{
+  /* flex: 0 0 28%; */
+  box-sizing: border-box;
+  /* line-height: 48rpx; */
+  border: 1rpx solid #66AAAC;
+  border-radius: 40rpx;
+  margin: 0 5rpx 10rpx;
+  float: left;
+  padding: 8rpx 20rpx;
+}
+
+.active-title{
+  background-color: #66AAAC;
+  color: #fff;
+}
+
+.clear{
+  clear: both;
+}
+
+.noComment{
+  padding: 50rpx 0;
+text-align: center;
+
+}

@@ -1,0 +1,47 @@
+<!--pages/goods/comment.wxml-->
+<view class="container">
+  <view class="allComment-title">
+    <!-- <view class="all-box"></view> -->
+    <view class="type-box">
+     <view bindtap="titleChange" data-type="all" class="{{activeType=='all'?'type-title active-title':'type-title'}}">全部({{commentCount.all}})</view>
+     <view bindtap="titleChange" data-type="five" class="{{activeType=='five'?'type-title active-title':'type-title'}}">5星好评({{commentCount.five}})</view>
+     <view bindtap="titleChange" data-type="four" class="{{activeType=='four'?'type-title active-title':'type-title'}}">4星好评({{commentCount.four}})</view>
+     <view bindtap="titleChange" data-type="three" class="{{activeType=='three'?'type-title active-title':'type-title'}}">3星中评({{commentCount.three}})</view>
+     <view bindtap="titleChange" data-type="two" class="{{activeType=='two'?'type-title active-title':'type-title'}}">2星中评({{commentCount.two}})</view>
+     <view bindtap="titleChange" data-type="one" class="{{activeType=='one'?'type-title active-title':'type-title'}}">1星差评({{commentCount.one}})</view>
+    </view>
+    <view class="clear"></view>
+  </view>
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list"   bindscrolltolower="bindDownLoad" enable-back-to-top="true" wx:if="{{goodsComment.data.length>0}}">
+    <view class="goods_comment_box b-f">
+       <view class="cont-box goods-comment-box b-t b-f b-b" wx:for="{{goodsComment.data}}" wx:key="goodsComment.data.comment_id">
+         <view class="picBox" style="background-image:url({{item.user.avatarUrl}})"></view>
+         <text class="admin">{{item.user.nickName}}</text>
+         <view class="com_xing">
+           <text class="iconfont2 icon-xingxing1 {{item.pingfen>0?'active ':'hide'}}"></text>
+           <text class="iconfont2 icon-xingxing1 {{item.pingfen>1?'active ':'hide'}}"></text>
+           <text class="iconfont2 icon-xingxing1 {{item.pingfen>2?'active ':'hide'}}"></text>
+           <text class="iconfont2 icon-xingxing1 {{item.pingfen>3?'active ':'hide'}}"></text>
+           <text class="iconfont2 icon-xingxing1 {{item.pingfen>4?'active ':'hide'}}"></text>
+         </view>
+         <view class="goods-comment-cont m-top20">{{item.pingjia}}</view>
+         <view class="f-22 col-9 m-top10 line">
+           <view class="create-time">{{item.create_time}}</view>
+           <view class="user-btn" wx:if="{{user_id==item.user_id}}">
+             <!-- <view class="iconfont icon-lajixiang delete" bindtap="delete" data-commentId="{{item.comment_id}}" data-orderGoodsId="{{item.order_goods_id}}"></view>  -->
+             <!-- <view class="iconfont icon-edit1" bindtap="edit" data-commentId="{{item.comment_id}}" data-orderGoodsId="{{item.order_goods_id}}"></view> -->
+           </view>
+         </view>
+      </view>
+    </view>
+    <view class="title-footer p-r" wx:if="{{no_more}}">
+      <text class="f-24 col-9 cont">到底了</text>
+      <view class="hr"></view>
+  </view>
+  </scroll-view>
+  <view wx:if="{{goodsComment.data.length==0}}" class="noComment">
+      暂无该类型的评论
+  </view>
+  
+  
+</view>

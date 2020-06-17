@@ -1,0 +1,32 @@
+<!--pages/user/collect.wxml-->
+<!-- <text>pages/user/collect.wxml</text> -->
+<view class="container">
+  <view class="top">
+    
+  </view>
+  <scroll-view class="collect" wx:if="{{list}}">
+    <view class="coll" wx:for="{{list}}" wx:key="this">
+      <view class="goods" data-goodsId="{{item.goods_id}}" bindtap="detail" data-status="{{item.goods.goods_status.value}}">
+        <view class="img-box">
+        <image mode="aspectFill" src="{{item.goods.image[0].file_path}}"></image>
+      </view>
+      <view class="content">
+        <view class="goods-name">{{item.goods.goods_name}}</view>
+        <view class="create-time">{{item.create_time}}</view>
+        <view class="goods-status" wx:if="{{item.goods.goods_status.value==20}}">
+          <text>失效</text>
+        </view>
+      </view>
+      </view>
+      <view class="coll-logo">
+        <!-- <text class="{{isCollect?'iconfont2 icon-xingxing1':'iconfont2 icon-xingxing'}}"></text>         -->
+        <text class="iconfont2 icon-xingxing1" wx:if="{{item.collect_id}}" bindtap="cancel" data-collectId="{{item.collect_id}}"></text>
+        <text class="iconfont2 icon-xingxing" wx:if="{{!item.collect_id}}"></text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="empty" wx:if="{{!list}}">
+    <text class="iconfont2 icon-5"></text>
+    <view>您还未添收藏商品</view>
+  </view>
+</view>

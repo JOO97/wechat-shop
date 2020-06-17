@@ -1,0 +1,65 @@
+/* pages/service/index.wxss */
+
+.flow-header-left{
+  padding-left: 90rpx; 
+}
+
+.comment-btn{
+ display: flex;
+ position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+
+}
+button {
+  flex: 1
+}
+
+.box-1 {
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding-bottom: 12rpx;
+  padding-left: 16rpx;
+  border-bottom: 1rpx solid #dedede;
+
+}
+
+.box-title {
+  height: 60rpx;
+line-height: 60rpx;
+font-size: 35rpx;
+
+}
+
+checkbox{
+  margin: 10rpx 0;
+}
+
+.box-2 {
+  margin-top: 20rpx;
+padding-left: 16rpx;
+background-color: #fff;
+border-bottom: 1rpx solid #dedede;
+
+}
+
+.box-3{
+  margin-top: 20rpx;
+padding: 0 16rpx 16rpx;
+background-color: #fff;
+border-bottom: 1rpx solid #dedede;
+
+
+}
+textarea{
+  width: 100%;
+  border: 1rpx solid #dedede;
+  box-sizing: border-box;
+  padding: 10rpx;
+  border-radius: 18rpx;
+}
+
+.submit{
+  background-color: #66aaac!important;
+}

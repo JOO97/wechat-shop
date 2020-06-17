@@ -1,0 +1,109 @@
+/* pages/order/comment.wxss */
+.comment-box{
+  width: 100%;
+  /* height: 100rpx; */
+  /* padding-top: 10rpx; */
+  margin-top: 16rpx;
+}
+
+
+.comment-text,.slider__title{
+  font-size: 40rpx;
+  margin-bottom: 20rpx; 
+}
+
+.slider__title{
+  margin-top: 10rpx;
+}
+.text-area{
+  width: 700rpx;
+  height: 690rpx;
+  padding: 10rpx;
+  /* background-color: #dedede; */
+}
+textarea{
+  /* height: 110rpx; */
+  /* border: 1px solid #dedede; */
+  background-color: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+
+  
+}
+
+
+.goods-box-left{
+  flex: 6;
+}
+
+.goods-box{
+  /* height: 90rpx; */
+  border-bottom: 1px solid #f3f3f3;
+padding-bottom: 15rpx;
+}
+
+.goods-box .goods-img-box{
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 30rpx;
+  flex: 0;
+
+}
+
+ .goods-box .goods-img{
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.goods-box .goods-img image{
+  width: 100%;
+  height: 100%;
+}
+.pingfen-box{
+  /* height: 30rpx; */
+}
+
+.pingfen-text{
+  width: 30rpx;
+}
+
+.pingfen-box{
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.pingfen-box text{
+  /* flex: 1; */
+  margin-top: 12rpx;
+}
+
+.pingfen-box slider{
+  flex: 1;
+}
+
+.order-comment{
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+  /* padding-bottom: 38rpx; */
+}
+
+.box{
+  /* background: pink; */
+  /* margin-bottom: 45rpx; */
+  padding: 20rpx;
+}
+
+.comment-btn{
+ display: flex;
+ margin-top: 80rpx;
+}
+
+button{
+  flex: 1;
+  margin: 0 10rpx;
+}
+
+.red-text{
+  color: #FF495E;
+}

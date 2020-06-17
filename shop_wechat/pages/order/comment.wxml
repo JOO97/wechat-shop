@@ -1,0 +1,39 @@
+<!--pages/order/comment.wxml-->
+<form  bindreset="formReset" bindsubmit="formSubmit">
+ <view class="order-comment b-f">
+     <view class="box" data-id="{{goodsinfo.order_goods_id}}">
+       <view class="dis-flex b-f goods-box">
+        <view class="flow-list-left goods-img-box">
+          <image mode="scaleToFill" src="{{goodsinfo.image.file_path}}" class="goods-img"></image>
+        </view>
+        <view class="goods-box-left">
+          <text class="h4 twolist-hidden" style="height:84rpx;">{{goodsinfo.goods_name}}</text>
+          <!-- <text class="p f-22 col-7">{{goodsinfo.goods_attr}}</text> -->
+          <view class="flow-list-cont">
+            <text class="flow-cont red-text">￥{{goodsinfo.goods_price}}</text>
+            <text class="small">×{{goodsinfo.total_num}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="comment-box">
+          <textarea placeholder="请输入少于100字的评论" auto-focus maxlength="100" name="pingjia" bindinput="inputVal" data-name="pingjia" value="{{form.pingjia}}" ></textarea>
+      </view>
+      <view class="pingfen-box">
+        <text>商品评分：</text>
+        <slider name="pingfen" show-value min="1" max="5" value="5" activeColor="#FF495E" ></slider>
+        <!-- <input value="5" type="number" class="pingfen-text"></input> -->
+      </view>
+    </view>
+ </view>
+ <view class="h3 comment-btn">
+      <!-- <view bindtap="comment">发布评论</view> -->
+      <!-- <button formType="submit" bindtap="commentSubmit" type="warn">发布</button> -->
+      <button formType="reset">Reset</button>
+      <button formType="submit" type="warn" disabled="{{disabled}}" plain="{{disabled}}">发布</button>
+ </view> 
+</form>
+
+
+
+
+

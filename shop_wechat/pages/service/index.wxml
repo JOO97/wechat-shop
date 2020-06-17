@@ -1,0 +1,86 @@
+<!--pages/service/index.wxml-->
+
+  <!-- 配送地址 -->
+  <view catchtap="selectAddress">
+    <view wx:if="{{address.address_id}}" data-id="{{address.address_id}}" class="address">
+      <view class="b-f">
+        <view class="flow-checkout-header">
+          <text class="iconfont icon-dingwei1"></text>
+          <view class="flow-header-left">
+            <view class="flow-checkout-admin f-30 col-3">
+              <text>{{address.name}}</text>
+              <text>{{address.phone}}</text>
+              <text class="col-m"></text>
+            </view>
+            <!-- <view class="flow-checkout-address">
+              {{address.region.province}} {{address.region.city}} {{address.region.region}} {{address.detail}}
+            </view> -->
+            <view class="flow-checkout-address">
+              {{address.region}} {{address.detail}}
+            </view>
+          </view>
+          <view class="flow-header-right pr-12">
+            <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="flow-checkout-header">
+        <text class="iconfont icon-dingwei1"></text>
+        <view class="flow-header-left">
+          <view class="f-28 col-6">去选择配送地址
+          </view>
+        </view>
+        <view class="flow-header-right p-r15">
+          <text class="iconfont icon-xiangyoujiantou user-orderJtou"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 预约 -->
+<form bindreset="formReset" bindsubmit="formSubmit">
+   <view class="box-1">
+     <view class="box-title">预约服务:</view>
+      <view class="form-box-content">
+        <checkbox-group class="checkbox-group" bindchange="checkboxChange" name="service_install">
+                <checkbox class="checkbox" checked="{{checked_1}}" value="service_install">
+                    <text>上门安装</text>
+                </checkbox>
+        </checkbox-group>
+        <checkbox-group class="checkbox-group" name="service_repair" bindchange="checkboxChange1">
+                <checkbox class="checkbox" checked="{{checked_2}}" value="checkboxChange">
+                    <text>上门维修</text>
+                </checkbox>
+        </checkbox-group>
+        <checkbox-group class="checkbox-group" bindchange="checkboxChange2" name="service_replace">
+                <checkbox class="checkbox" checked="{{checked_3}}" value="service_replace">
+                    <text>上门换芯</text>
+                </checkbox>
+        </checkbox-group>
+      </view>
+   </view>
+   <view class="box-2">
+       <view class="box-title">预约日期:</view>
+       <picker mode="date" name="service_date" value="{{startDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+         <view class="picker">
+           {{startDate}}
+         </view>
+       </picker>
+   </view>
+   <view class="box-3">
+       <view class="box-title">备注:</view>
+       <textarea placeholder="请填写正确的商品型号" name="service_msg"  bindinput="inputVal" data-name="service_msg" value="{{form.service_msg}}" >
+       </textarea>
+   </view>
+   <view class="h3 comment-btn">
+     <button formType="reset">Reset</button>
+     <button formType="submit" type="warn" disabled="{{disabled}}" class="submit">预约</button>
+   </view> 
+</form>
+
+ 
+  
+
+

@@ -1,0 +1,83 @@
+{
+  "pages": [    
+    "pages/index/index",
+    
+    "pages/user/index",
+    "pages/store/map",
+    "pages/user/collect",
+    "pages/store/index",
+    "pages/order/search",
+    "pages/order/index",
+    "pages/order/service",
+    "pages/service/index",
+    "pages/flow/index",
+    "pages/loaction/location",
+    "pages/order/comment",
+    "pages/goods/comment",
+    "pages/category/index",
+    "pages/category/list",
+    "pages/goods/index",
+    "pages/search/index",
+    "pages/flow/checkout",
+    "pages/user/notice",
+    "pages/order/detail",
+    "pages/address/index",
+    "pages/address/create",
+    "pages/address/detail",
+    "pages/login/login"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#66AAAC",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#60A7A9",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabBar/home.png",
+        "selectedIconPath": "images/tabBar/home_on.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "images/tabBar/cate.png",
+        "selectedIconPath": "images/tabBar/cate_on.png"
+      },
+      {
+        "pagePath": "pages/flow/index",
+        "text": "购物车",
+        "iconPath": "images/tabBar/cart.png",
+        "selectedIconPath": "images/tabBar/cart_on.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "images/tabBar/user.png",
+        "selectedIconPath": "images/tabBar/user_on.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json",
+ 
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.5",
+      "provider": "wx50b5593e81dd937a"
+    }
+  }
+}

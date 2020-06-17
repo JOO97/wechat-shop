@@ -1,0 +1,10 @@
+<!--pages/loaction/location.wxml-->
+
+<view class="retailStore">
+   <view class="cnaps  borderBottom">
+    <text class="iconfont icon-map"></text>
+    <!-- <text>所在城市：</text> -->
+    <text class='m-bbt'>{{city}}</text>
+  </view>
+</view>
+
